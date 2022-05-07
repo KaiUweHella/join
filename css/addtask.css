@@ -1,0 +1,35 @@
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+.main{
+    margin-left: 240px;
+    margin-top: 80px
+    
+}
+.head-text{
+    margin: 0;
+    color: rgba(0, 0, 0, 0.7);
+    font-weight: bold;
+}
+.head-text-small{
+    color: blue;
+    font-size: 13px;
+}
+.input-main{
+    display: flex;
+    background-color: rgba(28, 68, 212, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+    width: 1000px;
+    
+}
+.input-left{
+    width: 50%;
+}
+.input-right{
+    margin-left: 20px;
+    width: 50%;
+}
+
