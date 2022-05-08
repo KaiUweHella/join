@@ -1,0 +1,86 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.backlog {
+    padding-left: 220px;
+}
+
+h1 {
+    margin: 0;
+}
+
+h5 {
+    margin: 0;
+}
+
+.headline-backlog {
+    padding-top: 50px;
+}
+
+.headline {
+    color: #2c2ca8;
+}
+
+.backlog-table {
+    color: #2c2ca8;
+    margin-top: 45px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.table-project {
+    border-spacing: 0px;
+    width: 100%;
+    padding-right: 100px;
+}
+
+tbody {
+    box-sizing: border-box;
+}
+
+tbody tr {
+    /* width: 100%; */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    /* position: relative; */
+}
+
+tbody th {
+    display: flex;
+    color: #2c2ca8 !important;
+    /* min-width: 300px; */
+}
+
+tbody td {
+    display: flex;
+}
+
+#new-task {
+    align-items: center;
+    background-color: beige;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    border-left: 7px solid orange;
+    border-radius: 10px;
+}
+
+.task-profile {
+    margin: 10px;
+
+}
+
+.assigned-profil {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+table,
+th,
+td {
+    width: 100%;
+}

@@ -8,11 +8,81 @@
     <script src="./js/main.js"></script>
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/task.css">
+    <link rel="stylesheet" href="./css/backlog.css">
     <title>Join</title>
 </head>
 
 <body onload="init()">
     <div w3-include-html="./html_templates/menu.html"></div>
+
+    <div class="backlog">
+
+        <div class="headline-backlog">
+            <h1 class="padding-left padding-head-top">Backlog</h1>
+
+            <h5 class="padding-left headline">Learning Management System Project</h5>
+        </div>
+
+        <div class="backlog-table">
+            <table class="table-project">
+
+                <tbody>
+                    <tr>
+                        <th>ASSIGNED TO</th>
+                        <th>CATEGORY</th>
+                        <th>DETAILS</th>
+                    </tr>
+                </tbody>
+
+                <tbody>
+                    <tr class="new-task" id="new-task">
+                        <td class="max-width-td"> <svg class="task-profile" xmlns="http://www.w3.org/2000/svg"
+                                width="32" height="32" fill="currentColor" class="bi bi-person-circle"
+                                viewBox="0 0 16 16">
+                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                                <path fill-rule="evenodd"
+                                    d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                            </svg>
+
+                            <div class="assigned-profil">
+                                Gabi Gibsnicht <br>
+                                <a href="mailto:gabigibsnicht@mail.com">gabigibsnicht@mail.com</a>
+                            </div>
+
+                        </td>
+                        <td>Marketing</td>
+                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit.</td>
+                    </tr>
+                </tbody>
+
+                <tbody>
+                    <tr class="new-task" id="new-task">
+                        <td class="max-width-td"> <svg class="task-profile" xmlns="http://www.w3.org/2000/svg"
+                                width="32" height="32" fill="currentColor" class="bi bi-person-circle"
+                                viewBox="0 0 16 16">
+                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                                <path fill-rule="evenodd"
+                                    d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                            </svg>
+
+                            <div>
+                                Thomas Beck <br>
+                                <a href="mailto:thomasbeck@mail.com">thomasbeck@mail.com</a>
+                            </div>
+
+                        </td>
+                        <td>Product</td>
+                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit.</td>
+                    </tr>
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+
 </body>
 
 </html>
