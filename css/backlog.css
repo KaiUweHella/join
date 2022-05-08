@@ -78,6 +78,10 @@ tbody td {
     justify-content: center;
 }
 
+.assigned-profil a {
+    text-decoration: none;
+}
+
 
 table,
 th,
