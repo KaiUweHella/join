@@ -50,13 +50,12 @@ body {
 }
 
 .plus-svg{
-    margin-bottom: 0 !important;
-    display: flex;
-    align-items: center;
+    opacity: 60%;
 }
 .plus-svg:hover {
     fill: blue;
     cursor: pointer;
+    opacity: 100%;
 }
 .input-right-bottom{
     display: flex;

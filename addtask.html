@@ -26,14 +26,19 @@
 </head>
 
 <body onload="init()">
+    <!--Include menu div-->
     <div w3-include-html="./html_templates/menu.html"></div>
-
+    <!--Main div with margin from menu and top-->
     <div class="main">
         <div class="heading">
             <h1 class="head-text">Add Task</h1>
             <span class="head-text-small">Learning Management Systems Project</span>
         </div>
+        <!--From component of page-->
+        <form onsubmit="addTask()">
         <div class="input-main">
+            
+            <!--Left side of form-->
             <div class="input-left">
 
                 <div class="mb-3">
@@ -53,8 +58,10 @@
                     <label for="description" class="form-label label-margin">DESCRIPTION</label>
                     <textarea class="form-control" id="description" rows="3"></textarea>
                 </div>
+            
 
             </div>
+            <!--Right side of form-->
             <div class="input-right">
                 <label for="due-date" class="form-label">DUE DATE*</label>
 
@@ -73,6 +80,7 @@
                     
                     <div class="add-user">
                         <img class="avatar" src="./img/avatar.png">
+                        <!-- bootstrap svg -- class added for hover effects-->
                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
                             class="bi bi-plus-circle plus-svg" viewBox="0 0 16 16">
                             <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path>
@@ -82,10 +90,11 @@
                         </svg>
 
                     </div>
-
+                    <!--Div for buttons-->
                     <div class="submit-area">
                         <button type="button" class="btn btn-outline-primary">Cancel</button>
                         <button type="button" class="btn btn-primary">Create Task</button>
+                    
 
                     </div>
                 </div>
@@ -93,6 +102,7 @@
             </div>
 
         </div>
+    </form>
     </div>
 
 
