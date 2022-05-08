@@ -32,4 +32,37 @@ body {
     margin-left: 20px;
     width: 50%;
 }
+.form-label{
+    color: blue;
+    font-weight: bold;
+}
+.label-margin{
+    margin-top: 20px;
+}
+.avatar{
+    width: 70px;
+    margin-right: 10px;
+    align-items: center;
+}
+.add-user{
+    display: flex;
+    align-items: center;
+}
+
+.plus-svg{
+    margin-bottom: 0 !important;
+    display: flex;
+    align-items: center;
+}
+.plus-svg:hover {
+    fill: blue;
+    cursor: pointer;
+}
+.input-right-bottom{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
 
