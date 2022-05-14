@@ -20,7 +20,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <script src="./js/task.js"></script>
+    <script src="./js/add_Task.js"></script>
+    <!--<script src="./js/task.js"></script> -->
     <script src="./js/main.js"></script>
 
     <link rel="stylesheet" href="./css/main.css">
@@ -28,7 +29,7 @@
     <title>Join</title>
 </head>
 
-<body onload="init()">
+<body onload="init(), loadAllTasks()">
     <!--Include menu div-->
     <div w3-include-html="./html_templates/menu.html"></div>
     <!--Main div with margin from menu and top-->
@@ -38,7 +39,7 @@
             <span class="head-text-small">Learning Management Systems Project</span>
         </div>
         <!--From component of page-->
-        <form onsubmit="addTask()">
+        <form onsubmit="addTask(event)">
         <div class="input-main">
             
             <!--Left side of form-->
@@ -96,7 +97,7 @@
                     <!--Div for buttons-->
                     <div class="submit-area">
                         <button type="button" class="btn btn-outline-primary">Cancel</button>
-                        <button type="button" class="btn btn-primary">Create Task</button>
+                        <button type="submit" class="btn btn-primary">Create Task</button>
                     
 
                     </div>
@@ -105,7 +106,7 @@
             </div>
 
         </div>
-    </form>
+   </form>
     </div>
 
 
