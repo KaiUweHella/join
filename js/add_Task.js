@@ -94,7 +94,7 @@ allTasks = [];
 // jsdoc: npm install -g jsdoc
 
 /**
- * This function reads input data from addTasks form
+ * This function reads input data from addTasks form pushes input to JSON-array then saves this array in localstorage
  * 
  * @param {string} event - on event here summit button click the default funtcion of the form is prevented so that processes in console can be seen and the page is not automatically reloaded.
  */
