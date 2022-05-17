@@ -87,10 +87,6 @@ let users = [
     }
  ]
 
-
- // Define Array for all tasks
-allTasks = [];
-
 // jsdoc: npm install -g jsdoc
 
 /**
@@ -112,7 +108,6 @@ allTasks = [];
 
      createJsonArrayForTask(title, category, description, date, urgency);       
      resetFormObjects(title, category, description, date, urgency);       
-     arraySaveToLocalStorage();
  }
 
 /**
@@ -135,9 +130,8 @@ allTasks = [];
         'status' : 'backlog'
            };
     // Push JSON to array "allTasks"
-    allTasks.push(task); 
-    
-    console.log('array', allTasks)
+    tasks.push(task); 
+    setArray('tasks', tasks);
 }  
  
 /**
@@ -164,8 +158,8 @@ function resetFormObjects(title, category, description, date, urgency) {
  */
 function arraySaveToLocalStorage() {
     // Json array to string then saved in local storage)
-     let allTasksAsString = JSON.stringify(allTasks);
-     localStorage.setItem('allTasks', allTasksAsString);
+     let allTasksAsString = JSON.stringify(tasks);
+     localStorage.setItem('tasks', allTasksAsString);
 }
 
 /**
@@ -179,3 +173,8 @@ function loadAllTasks() {
 
     console.log('loaded all Tasks', allTasks);
 }
+
+
+function setArray(key, array) {
+    backend.setItem(key, JSON.stringify(array));
+  }
