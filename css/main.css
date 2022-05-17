@@ -57,5 +57,6 @@ body {
     position: absolute;
     bottom: 85px;
     fill: cornsilk;
+    box-sizing: content-box;
 }
 
