@@ -11,12 +11,15 @@ body {
     color: blue;
     font-size: 13px;
 }
+.main{
+    margin-right: 40px;
+}
 .input-main{
     display: flex;
     background-color: rgba(28, 68, 212, 0.2);
     border-radius: 10px;
     padding: 20px;
-    width: 1000px;
+    max-width: 1000px;
     
 }
 .input-left{
@@ -56,6 +59,29 @@ body {
     justify-content: space-between;
     align-items: center;
 }
+
+@media(max-width: 1000px) {
+    .input-main{
+        flex-direction: column;
+    }
+    .input-right{
+        margin-left: 0;
+        width: 100%;
+    }
+    .input-left{
+        width: 100%;
+    }
+    
+ }
+
+ @media(max-width: 650px) {
+    .submit-area{
+        margin-top: 20px;
+    }
+    .input-right-bottom{
+        flex-direction: column;
+    }
+ }
 
 
 
