@@ -13,7 +13,7 @@ body {
  background-color: blue;
 } */
 
-.menu {
+.board-menu {
     position: absolute;
     display: inline-block;
     top: 0;
@@ -29,7 +29,7 @@ body {
 }
 
 
-.menu a {
+.board-menu a {
     color: aliceblue;
     text-decoration: none;
 }
