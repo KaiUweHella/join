@@ -1,3 +1,9 @@
+:root{
+  --color-high:red;
+  --color-medium: yellow;
+  --color-low:green;
+}
+
 .columns {
   display: flex;
   margin-right: 40px;
@@ -35,18 +41,18 @@ h3 {
 .color-field {
   height: 16px;
   width: 60px;
-  background-color: red;
   border-radius: 20px;
 }
 
 .task-description {
-  margin: 12px 0 8px 0;
+  margin: 0px 0 8px 0;
 }
 
 .time-and-members {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   width: 100%;
 }
 
@@ -64,5 +70,9 @@ h3 {
   height: 32px;
   border-radius: 50%;
   object-fit: cover;
-  margin: 0 4px;
+  margin: 4px 4px;
+}
+
+.task-h4{
+  margin: 8px 0 4px 0;
 }

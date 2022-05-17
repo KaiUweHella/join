@@ -1,4 +1,11 @@
+setURL('https://gruppe-235.developerakademie.net/smallest_backend_ever/');
+
 async function init() {
+  await downloadFromServer();
+  tasks = JSON.parse(backend.getItem('tasks')) || [];
+
+  console.log(tasks);
+
   await includeHTML();
 }
 

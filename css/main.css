@@ -34,13 +34,13 @@ body {
     text-decoration: none;
 }
 
-.links {
+.links-con {
     font-size: 20px;
     padding-top: 120px;
     list-style: none;
 }
 
-.links li {
+.links-con li {
     padding-top: 12px;
 }
 
@@ -51,11 +51,12 @@ body {
 
 }
 
-.profile-img {
+.profile-logo {
     display: flex;
     padding-left: 70px;
     position: absolute;
     bottom: 85px;
     fill: cornsilk;
+    box-sizing: content-box;
 }
 
