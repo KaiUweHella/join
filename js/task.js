@@ -19,6 +19,11 @@ let users = [
   },
 ];
 
+  async function showOverview(){
+    await init();
+    showCards();
+  }
+
 function showCards() {
   for (let i = 0; i < tasks.length; i++) {
     const element = tasks[i];
