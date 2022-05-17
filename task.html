@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/task.css">
 
+    <script src="./js/mini_backend.js"></script>
+    <script src="./js/template.js"></script>
     <script src="./js/task.js"></script>
     <script src="./js/main.js"></script>
     
@@ -23,37 +25,24 @@
 
 <body onload="init()">
     <div w3-include-html="./html_templates/menu.html"></div>
-    <div class="main columns">
+    <div class="main columns" >
         <div class="category">
             <h3>To Do</h3>
-            <div class="all-tasks">
-                <div class="task-each-category">
-                    <div class="color-field"></div>
-                    <p class="task-description">Create test message!</p>
-                    <div class="time-and-members">
-                        <div class="time-date">
-                            <img src="./img/clock.svg" alt="">
-                            <p class="date">08.05.2022</p>
-                        </div>
-                        <div class="task-member">
-                            <img class="avatar" src="./img/sergio-de-paula-c_GmwfHBDzk-unsplash.jpg" alt="">
-                            <img class="avatar" src="./img/sergio-de-paula-c_GmwfHBDzk-unsplash.jpg" alt="">
-                        </div>
-                    </div>
-                </div>
+            <div class="all-tasks" id="todo">
+                
             </div>
         </div>
         <div class="category">
             <h3>In Progress</h3>
-            <div class="all-tasks"></div>
+            <div class="all-tasks" id="inProgress"></div>
         </div>
         <div class="category">
             <h3>Testing</h3>
-            <div class="all-tasks"></div>
+            <div class="all-tasks" id="testing"></div>
         </div>
         <div class="category">
             <h3>Done</h3>
-            <div class="all-tasks"></div>
+            <div class="all-tasks" id="done"></div>
         </div>
     </div>
 </body>
