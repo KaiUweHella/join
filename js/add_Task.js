@@ -156,23 +156,23 @@ function resetFormObjects(title, category, description, date, urgency) {
 /**
  * This function converts JSON-array to string then saves to local storage
  */
-function arraySaveToLocalStorage() {
-    // Json array to string then saved in local storage)
-     let allTasksAsString = JSON.stringify(tasks);
-     localStorage.setItem('tasks', allTasksAsString);
-}
+// function arraySaveToLocalStorage() {
+//     // Json array to string then saved in local storage)
+//      let allTasksAsString = JSON.stringify(tasks);
+//      localStorage.setItem('tasks', allTasksAsString);
+// }
 
 /**
  *  This function reads JSON array as a string from localstorage on page load. Function call in html body "onload"
  *  string is then parsed into JSON array and our allTasks array is overwriten with this array on load.
  */    
-function loadAllTasks() {
+// function loadAllTasks() {
     
-    let allTasksAsString = localStorage.getItem('allTasks');
-    allTasks = JSON.parse(allTasksAsString);
+//     let allTasksAsString = localStorage.getItem('allTasks');
+//     allTasks = JSON.parse(allTasksAsString);
 
-    console.log('loaded all Tasks', allTasks);
-}
+//     console.log('loaded all Tasks', allTasks);
+// }
 
 
 function setArray(key, array) {

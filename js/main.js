@@ -7,6 +7,7 @@ async function init() {
   console.log(tasks);
 
   await includeHTML();
+  showCards();
 }
 
 async function includeHTML() {
