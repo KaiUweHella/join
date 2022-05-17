@@ -28,6 +28,7 @@ h5 {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
+    padding-right: 40px;
 }
 
 .table-project {
@@ -36,55 +37,53 @@ h5 {
     padding-right: 100px;
 }
 
-tbody {
-    box-sizing: border-box;
+.priority {
+    font-size: 48px !important;
+    vertical-align: middle !important;
+    line-height: 0 !important;
+    margin-left: -6px !important;
 }
 
-tbody tr {
-    /* width: 100%; */
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    /* position: relative; */
+.table tr {
+    border-top: 1px solid #dee2e6;
 }
 
-tbody th {
-    display: flex;
-    color: #2c2ca8 !important;
-    /* min-width: 300px; */
+.table td, .table th {
+    vertical-align: middle !important;
 }
 
-tbody td {
-    display: flex;
-}
+/* CODE von erste Tabelle im Textdocument */
 
 #new-task {
     align-items: center;
-    background-color: beige;
+    background-color: #fbfbfb;
     margin-top: 3px;
     margin-bottom: 3px;
-    border-left: 7px solid orange;
+    /* border-left: 7px solid orange;     Standard JOIN Style */
     border-radius: 10px;
+    cursor: pointer;
+    
 }
 
 .task-profile {
-    margin: 10px;
-
+    margin: 5px;
 }
 
-.assigned-profil {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+#backlogTask {
+    cursor: pointer;
 }
 
-.assigned-profil a {
-    text-decoration: none;
+.table tbody+tbody {
+    border: 0px !important;
 }
 
 
-table,
-th,
-td {
-    width: 100%;
+.double_arrow_up {
+    font-size: 48px !important;
+    color: red;
 }
+
+#liveAlertBtn {
+    cursor: pointer;
+}
+
