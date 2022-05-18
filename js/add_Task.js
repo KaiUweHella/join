@@ -1,20 +1,20 @@
 let users = [
     {
        "name":"Kai",
-       "img":"url",
-       "mail":"",
+       "img":"./img/avatar.png",
+       "mail":"me@test",
        "password":""
     },
     {
        "name":"Brett",
-       "img":"url",
-       "mail":"",
+       "img":"./img/avatar.png",
+       "mail":"him@test",
        "password":""
     },
     {
        "name":"Amar",
-       "img":"url",
-       "mail":"",
+       "img":"./img/avatar.png",
+       "mail":"himaswell@test",
        "password":""
     }
  ]
@@ -36,9 +36,10 @@ let users = [
      let description = document.getElementById('description');
      let date = document.getElementById('due-date');
      let urgency = document.getElementById('urgency');
+     let user = document.getElementById('selectedUser');
     //  let user = document.getElementById('assign');
 
-     createJsonArrayForTask(title, category, description, date, urgency);       
+     createJsonArrayForTask(title, category, description, date, urgency, user);       
      resetFormObjects(title, category, description, date, urgency);       
  }
 
@@ -51,7 +52,7 @@ let users = [
  * @param {string} date - due date as string
  * @param {string} urgency task urgency
  */
- function createJsonArrayForTask(title, category, description, date, urgency) {
+ function createJsonArrayForTask(title, category, description, date, urgency, user) {
     // Variables saved as JSON , with .value the value of the form object is returned (writen this way so that the form can then be reset).
     let task = {
         'title': title.value,
@@ -59,9 +60,10 @@ let users = [
         'description' : description.value,
         'date': date.value,
         'urgency' : urgency.value,
-        'status' : 'backlog'
+        'status' : 'backlog',
+        'user' : user.value
            };
-    // Push JSON to array "allTasks"
+    // Push JSON to array "tasks"
     tasks.push(task); 
     setArray('tasks', tasks);
 }  
@@ -83,7 +85,40 @@ function resetFormObjects(title, category, description, date, urgency) {
     date.value = '';
     urgency.value = '';
 
-}    
+}  
+
+function showUser(i) {
+   document.getElementById('user-container').innerHTML = ''
+   document.getElementById('bg-grey').classList.remove('d-none')
+   for (let i = 0; i < users.length; i++) {
+      
+      let userName = users[i]['name'];
+      let userImg = users[i]['img'];
+      let userMail = users[i]['mail'];
+
+      
+      document.getElementById('user-container').innerHTML += /*html*/`
+      <div class="individualUser" onclick="addUser(${i}, '${userName}')">
+         <img class="avatar" src="${userImg}">
+         <div class="userDetails">
+            <span class="userName">${userName}</span>
+            <span class="userName">${userMail}</span>
+         </div>
+         
+      </div>`
+   }
+}
+
+function addUser(r, Name) {
+   document.getElementById('selectedUser').innerHTML = Name
+   console.log('useri', r)
+   console.log('user', Name)
+   
+}
+
+function closeUserDialog() {
+   document.getElementById('bg-grey').classList.add('d-none')
+}
 
 /**
  * This function converts JSON-array to string then saves to local storage

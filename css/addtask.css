@@ -60,6 +60,44 @@ body {
     align-items: center;
 }
 
+.bg-grey{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 4;
+}
+.d-none {
+    display: none;
+}
+.user-container {
+    position: relative;
+    top: 20%;
+    height: 300px;
+    width: 500px;
+    z-index: 5;
+    background-color: #D2DAF6;
+    border-radius: 10px;
+    padding: 20px;
+}
+.userName{
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+.individualUser{
+    display: flex;
+    align-items: center;
+}
+.userDetails{
+    display: flex;
+    flex-direction: column;
+}
+
+
 @media(max-width: 1000px) {
     .input-main{
         flex-direction: column;
