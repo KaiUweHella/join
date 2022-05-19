@@ -19,9 +19,9 @@
         integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 
     <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script> -->
 
     <!-- Google Icons -->
     <link rel="stylesheet"
@@ -29,15 +29,16 @@
 
     <!-- JavaScript source -->
 
-
     <script src="./js/mini_backend.js"></script>
+    <script src="./js/add_Task.js"></script>
 
-    <script src="./js/task.js"></script>
+    <!-- <script src="./js/task.js"></script> -->
     <script src="./js/main.js"></script>
+    <script src="./js/backlog.js"></script>
 
     <!-- Material Design links -->
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
-    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <!-- <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script> -->
 
     <title>Join</title>
 
@@ -70,9 +71,8 @@
                     </tr>
                 </thead>
 
-                <tbody onclick="alert()" id="testtabelle">
-                    <!-- bei JS komnmt auch undefined wegen alert() -->
-                    <!-- Ersetzt durch JAVASCRIPT  -->
+                <!-- Backlog Table -->
+                <tbody id="backlogTable">
 
                     <tr id="liveAlertBtn">
                         <th id="urgency" scope="row"><span class="material-symbols-outlined double_arrow_up">
@@ -93,136 +93,15 @@
                         <div id="liveAlertPlaceholder"></div>
                     </tr>
                 </tbody>
-                <!-- <tbody>
-                    <tr id="liveAlertBtn">
-                        <th id="urgency" scope="row"><span class="material-symbols-outlined double_arrow_up">
-                                keyboard_double_arrow_up
-                            </span></th>
-                        <td id="user"><svg class="task-profile" xmlns="http://www.w3.org/2000/svg" width="32"
-                                height="32" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
-                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-                                <path fill-rule="evenodd"
-                                    d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-                            </svg>
-                            <span class="">Jacob<br></a></span>
-                        </td>
-                        <td><a href="mailto:gabigibsnicht@mail.com">gabigibsnicht@mail.com</td>
-                        <td id="category">Marketing</td>
-                        <td id="status">Backlog</td>
-                        <td></td>
-                        <div id="liveAlertPlaceholder"></div>
-                    </tr>
-                </tbody> -->
 
-
-                <!--
-                <tbody>
-                    <tr id="liveAlertBtn">
-                        <th scope="row"><img src="img/icons_google/medium-icon.png" alt=""></th>
-                        <td>
-                            <svg class="task-profile" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
-                                fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
-                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-                                <path fill-rule="evenodd"
-                                    d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-                            </svg>
-                            <span class="">Jacob</span>
-                        </td>
-                        <td><a href="mailto:gabigibsnicht@mail.com">gabigibsnicht@mail.com</td>
-                        <td>Design</td>
-                        <td>Backlog</td>
-                        <td></td>
-                        <div id="liveAlertPlaceholder"></div>
-                    </tr>
-                </tbody> -->
-                <!-- <tbody>
-                    <tr id="liveAlertBtn">
-                        <th scope="row"><img src="img/icons_google/low-icon.png" alt=""></th>
-                        <td> <svg class="task-profile" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
-                                fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
-                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-                                <path fill-rule="evenodd"
-                                    d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-                            </svg>
-                            <span class="">Jacob</span>
-                        </td>
-                        <td><a href="mailto:gabigibsnicht@mail.com">gabigibsnicht@mail.com</td>
-                        <td>Testing</td>
-                        <td></td>
-                        <div id="liveAlertPlaceholder"></div>
-                    </tr>
-                </tbody> -->
 
             </table>
+       
+            <script>
+              
+            </script>
 
-            <button onclick="test()">Add Task</button>
-            <div></div>
-
-
-            <!-- JavaScript hier wegen "append" -->
-            <script src="./backlog.js"></script>
-
-            <!-- <table class="table-project">
-
-                <tbody>
-                    <tr>
-                        <th></th>
-                        <th>ASSIGNED TO</th>
-                        <th>CATEGORY</th>
-                        <th>STATUS</th>
-                        <th>DETAILS</th>
-                    </tr>
-                </tbody>
-
-                <tbody>
-                    <tr class="new-task" id="new-task" onclick="addComment()">
-                        <td>test</td>
-                        <td class="max-width-td"> <svg class="task-profile" xmlns="http://www.w3.org/2000/svg"
-                                width="32" height="32" fill="currentColor" class="bi bi-person-circle"
-                                viewBox="0 0 16 16">
-                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-                                <path fill-rule="evenodd"
-                                    d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-                            </svg>
-
-                            <div class="assigned-profil">
-                                Gabi Gibsnicht <br>
-                                <a href="mailto:gabigibsnicht@mail.com">gabigibsnicht@mail.com</a>
-                            </div>
-
-                        </td>
-                        <td>Marketing</td>
-                        <td>Backlog</td>
-                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit.</td>
-                    </tr>
-
-                </tbody>
-
-                <tbody>
-                    <tr class="new-task" id="new-task">
-                        <td>test</td>
-                        <td class="max-width-td"> <svg class="task-profile" xmlns="http://www.w3.org/2000/svg"
-                                width="32" height="32" fill="currentColor" class="bi bi-person-circle"
-                                viewBox="0 0 16 16">
-                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-                                <path fill-rule="evenodd"
-                                    d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-                            </svg>
-
-                            <div class="assigned-profil">
-                                Thomas Beck <br>
-                                <a href="mailto:thomasbeck@mail.com">thomasbeck@mail.com</a>
-                            </div>
-
-                        </td>
-                        <td>Product</td>
-                        <td>Backlog</td>
-                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit.</td>
-                    </tr>
-                </tbody>
-
-            </table> -->
-
+            <!-- <div id="container"></div> -->
 
         </div>
 
