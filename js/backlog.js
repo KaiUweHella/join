@@ -1,41 +1,10 @@
-// let users = [
-//     {
-//         name: 'Kai',
-//         img : 'url',
-//         mail : '',
-//         password : '',
-//     },{
-//         name: 'Brett',
-//         img : 'url',
-//         mail : '',
-//         password : '',
-//     },{
-//         name: 'Amar',
-//         img : 'url',
-//         mail : '',
-//         password : '',
-//     }
-// ];
-
-// MEINE JAVASCRIPT
-
-// let colorsOfUrgency = {
-//     0: '#61BD4F',
-//     1: '#F2D600',
-//     2: '#EB5A46',
-// }
-
-
 let tasks = [];
-setURL('https://gruppe-235.developerakademie.net/smallest_backend_ever/');
 
 
-async function init() {
-    await downloadFromServer();
-    tasks = JSON.parse(backend.getItem('tasks'));
-    console.log('all tasks', tasks);
+async function showBacklogTask(){
+    await init();
     renderBacklogTasks();
-}
+  }
 
 function renderBacklogTasks() {
     // let backlogTables = document.getElementById('backlogTable').value;
@@ -59,7 +28,7 @@ function renderBacklogTasks() {
             </svg>
             <span class="">${users[i]}<br></a></span>
         </td>
-        <td><a href="mailto:gabigibsnicht@mail.com">gabigibsnicht@mail.com</td>
+        <td><a href="mailto:gabigibsnicht@mail.com">${users.userMail}</td>
         <td id="category">${tasks[i].category}</td>
         <td id="status">${tasks[i].status}</td>
         <td>${tasks[i].description}</td>
@@ -68,4 +37,5 @@ function renderBacklogTasks() {
     </tbody>`;
 
     }
+    
 }
