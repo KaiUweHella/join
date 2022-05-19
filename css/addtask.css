@@ -75,6 +75,12 @@ body {
     display: none;
 }
 .user-container {
+    z-index: 5;
+    background-color: #D2DAF6;
+    border-radius: 10px;
+    padding: 20px;
+}
+.container-outer {
     position: relative;
     top: 20%;
     height: 300px;
@@ -82,7 +88,14 @@ body {
     z-index: 5;
     background-color: #D2DAF6;
     border-radius: 10px;
-    padding: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+.closeFrame{
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 20px;
 }
 .userName{
     font-weight: bold;
@@ -91,10 +104,18 @@ body {
 .individualUser{
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 .userDetails{
     display: flex;
     flex-direction: column;
+}
+.individualUser :hover{
+    color: rgba(40, 86, 185, 0.5);
+}
+.addUser{
+    visibility: hidden;
+    width: 0;
 }
 
 

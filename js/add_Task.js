@@ -21,6 +21,36 @@ let users = [
 
 // jsdoc: npm install -g jsdoc
 
+function showUser(i) {
+   document.getElementById('user-container').innerHTML = ''
+   document.getElementById('bg-grey').classList.remove('d-none')
+   for (let i = 0; i < users.length; i++) {
+      
+      let userName = users[i]['name'];
+      let userImg = users[i]['img'];
+      let userMail = users[i]['mail'];
+
+      
+      document.getElementById('user-container').innerHTML += /*html*/`
+      <div class="individualUser" onclick="addUser(${i}, '${userName}'), closeUserDialog()">
+         <img class="avatar" src="${userImg}">
+         <div class="userDetails">
+            <span class="userName">${userName}</span>
+            <span class="userName">${userMail}</span>
+         </div>
+         
+      </div>`
+   }
+}
+
+function addUser(r, Name) {
+   document.getElementById('selectedUser').innerHTML = Name
+   console.log('useri', r)
+   console.log('user', Name)
+   
+}
+
+
 /**
  * This function reads input data from addTasks form pushes input to JSON-array then saves this array in localstorage
  * 
@@ -37,6 +67,9 @@ let users = [
      let date = document.getElementById('due-date');
      let urgency = document.getElementById('urgency');
      let user = document.getElementById('selectedUser');
+     console.log('user', user);
+     console.log('des', description);
+
     //  let user = document.getElementById('assign');
 
      createJsonArrayForTask(title, category, description, date, urgency, user);       
@@ -54,6 +87,13 @@ let users = [
  */
  function createJsonArrayForTask(title, category, description, date, urgency, user) {
     // Variables saved as JSON , with .value the value of the form object is returned (writen this way so that the form can then be reset).
+    
+    let description2 = document.getElementById('description').value;
+    let user2 = document.getElementById('selectedUser').value;
+    console.log('user', user2);
+    console.log('des', description2);
+
+
     let task = {
         'title': title.value,
         'category': category.value,
