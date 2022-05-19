@@ -14,7 +14,7 @@ body {
 } */
 
 .board-menu {
-    position: absolute;
+    position: fixed;
     display: inline-block;
     top: 0;
     left: 0;
