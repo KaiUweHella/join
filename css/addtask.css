@@ -42,8 +42,7 @@ body {
     align-items: center;
 }
 .add-user{
-    display: flex;
-    align-items: center;
+    
 }
 
 .plus-svg{
@@ -114,12 +113,26 @@ body {
     color: rgba(40, 86, 185, 0.5);
 }
 .addUser{
-    visibility: hidden;
-    width: 0;
+    resize: none;
+}
+.avatar-plus{
+    display: flex;
+    align-items: center;
+}
+.svg-check{
+    fill: rgb(32, 90, 14);
+    margin-left: 50px;
+}
+.submit-area{
+    margin-top: 60px
+}
+.confirm-text{
+    color: rgb(77, 150, 54);
+    font-weight: bold;
 }
 
 
-@media(max-width: 1000px) {
+@media(max-width: 1100px) {
     .input-main{
         flex-direction: column;
     }
@@ -133,7 +146,7 @@ body {
     
  }
 
- @media(max-width: 650px) {
+ @media(max-width: 695px) {
     .submit-area{
         margin-top: 20px;
     }

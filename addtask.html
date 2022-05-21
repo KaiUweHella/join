@@ -66,6 +66,7 @@
                         <label for="description" class="form-label label-margin">DESCRIPTION</label>
                         <textarea class="form-control" id="description" rows="3"></textarea>
                     </div>
+                    <div id="confirm-text" class="confirm-text"></div>
 
 
                 </div>
@@ -88,25 +89,30 @@
                     <div class=" input-right-bottom">
 
                         <div class="add-user">
-                            <img class="avatar" src="./img/avatar.png">
-                            <!-- bootstrap svg -- class added for hover effects-->
-                            <svg xmlns="http://www.w3.org/2000/svg" onclick="showUser()" width="25" height="25"
-                                fill="currentColor" class="bi bi-plus-circle plus-svg" viewBox="0 0 16 16">
-                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path>
-                                <path
-                                    d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z">
-                                </path>
-                            </svg>
+                            <div class="avatar-plus">
+                                <img class="avatar" src="./img/avatar.png">
+                                <!-- bootstrap svg -- class added for hover effects-->
+                                <svg xmlns="http://www.w3.org/2000/svg" onclick="showUser()" width="25" height="25"
+                                    fill="currentColor" class="bi bi-plus-circle plus-svg" viewBox="0 0 16 16">
+                                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z">
+                                    </path>
+                                    <path
+                                        d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z">
+                                    </path>
+                                </svg>
+                            </div>
                             <textarea id="selectedUser" class="addUser"></textarea>
 
                         </div>
                         <!--Div for buttons-->
+                        
                         <div class="submit-area">
                             <button type="button" class="btn btn-outline-primary"
                                 onclick="resetFormObjects(title, category, description, urgency)">Cancel</button>
                             <button type="submit" class="btn btn-primary">Create Task</button>
-                            
+
                         </div>
+                        
                     </div>
 
                 </div>
@@ -120,8 +126,8 @@
             <div class="closeFrame">
                 <button type="button" class="btn-close" aria-label="Close"></button>
             </div>
-                <div id="user-container" class="user-container" onclick="event.stopPropagation()"></div>
-            
+            <div id="user-container" class="user-container" onclick="event.stopPropagation()"></div>
+
         </div>
     </div>
 </body>

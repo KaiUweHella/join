@@ -2,54 +2,24 @@ let users = [
     {
        "name":"Kai",
        "img":"./img/avatar.png",
-       "mail":"me@test",
+       "mail":"Kai@test.com",
        "password":""
     },
     {
        "name":"Brett",
        "img":"./img/avatar.png",
-       "mail":"him@test",
+       "mail":"Brett@test_1.com",
        "password":""
     },
     {
        "name":"Amar",
        "img":"./img/avatar.png",
-       "mail":"himaswell@test",
+       "mail":"Amar@test_2.com",
        "password":""
     }
  ]
 
 // jsdoc: npm install -g jsdoc
-
-function showUser(i) {
-   document.getElementById('user-container').innerHTML = ''
-   document.getElementById('bg-grey').classList.remove('d-none')
-   for (let i = 0; i < users.length; i++) {
-      
-      let userName = users[i]['name'];
-      let userImg = users[i]['img'];
-      let userMail = users[i]['mail'];
-
-      
-      document.getElementById('user-container').innerHTML += /*html*/`
-      <div class="individualUser" onclick="addUser(${i}, '${userName}'), closeUserDialog()">
-         <img class="avatar" src="${userImg}">
-         <div class="userDetails">
-            <span class="userName">${userName}</span>
-            <span class="userName">${userMail}</span>
-         </div>
-         
-      </div>`
-   }
-}
-
-function addUser(r, Name) {
-   document.getElementById('selectedUser').innerHTML = Name
-   console.log('useri', r)
-   console.log('user', Name)
-   
-}
-
 
 /**
  * This function reads input data from addTasks form pushes input to JSON-array then saves this array in localstorage
@@ -67,13 +37,17 @@ function addUser(r, Name) {
      let date = document.getElementById('due-date');
      let urgency = document.getElementById('urgency');
      let user = document.getElementById('selectedUser');
-     console.log('user', user);
-     console.log('des', description);
-
-    //  let user = document.getElementById('assign');
 
      createJsonArrayForTask(title, category, description, date, urgency, user);       
-     resetFormObjects(title, category, description, date, urgency);       
+     resetFormObjects(title, category, description, date, urgency, user); 
+
+     document.getElementById('confirm-text').innerHTML = 
+     /*html*/`Task assigned successfully`
+
+     setTimeout(function(){
+     document.getElementById('confirm-text').innerHTML = ''
+     },2000);
+     
  }
 
 /**
@@ -103,7 +77,7 @@ function addUser(r, Name) {
         'status' : 'backlog',
         'user' : user.value
            };
-    // Push JSON to array "tasks"
+    // Push JSON to array "tasks" auf server
     tasks.push(task); 
     setArray('tasks', tasks);
 }  
@@ -117,26 +91,36 @@ function addUser(r, Name) {
  * @param {string} date - due date as string
  * @param {string} urgency task urgency
  */
-function resetFormObjects(title, category, description, date, urgency) {
+function resetFormObjects(title, category, description, date, urgency, user) {
     // Reset form objects
     title.value = '';
     category.value = '';
     description.value = '';
     date.value = '';
     urgency.value = '';
+    user.value = '';
 
 }  
 
+
+/**
+ * This function brings up dialog box with users to assign to the task (From array users in this js file)
+ * 
+ * @param {string} i - user number
+ */
 function showUser(i) {
+   //clear previous content
    document.getElementById('user-container').innerHTML = ''
+   // Remove hidden class
    document.getElementById('bg-grey').classList.remove('d-none')
+   // Iterate through users
    for (let i = 0; i < users.length; i++) {
       
       let userName = users[i]['name'];
       let userImg = users[i]['img'];
       let userMail = users[i]['mail'];
 
-      
+      //add data to dialogbox
       document.getElementById('user-container').innerHTML += /*html*/`
       <div class="individualUser" onclick="addUser(${i}, '${userName}')">
          <img class="avatar" src="${userImg}">
@@ -144,21 +128,50 @@ function showUser(i) {
             <span class="userName">${userName}</span>
             <span class="userName">${userMail}</span>
          </div>
-         
+         <!-- div for check symbol -->
+         <div id="checked_${i}"></div>
       </div>`
    }
 }
 
-function addUser(r, Name) {
-   document.getElementById('selectedUser').innerHTML = Name
-   console.log('useri', r)
-   console.log('user', Name)
-   
+/**
+ * This function adds selected user to textarea in form to be submitted
+ * 
+ * @param {string} i - for testing only
+ * @param {string} userName - user name form function "addUser" (div within popup dialogbox)
+ */
+function addUser(i, userName) {
+   document.getElementById('selectedUser').innerHTML = userName
+   //add check symbol next to selected user
+   document.getElementById(`checked_${i}`).innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle svg-check" viewBox="0 0 16 16">
+   <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+   <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
+   </svg>`
+    //closes dialogbox after 500ms
+   setTimeout(function(){
+   closeUserDialog()
+   console.log('useri', i)
+   console.log('user', userName)
+   }, 500);
+
 }
 
+/**
+ * This function closes the adduser popup dialog box
+ */
 function closeUserDialog() {
    document.getElementById('bg-grey').classList.add('d-none')
 }
+
+/**
+ * This function pushes araray to server via main.js and minibackend.js
+ * 
+ * @param {string} key 
+ * @param {array} array 
+ */
+ function setArray(key, array) {
+   backend.setItem(key, JSON.stringify(array));
+ }
 
 /**
  * This function converts JSON-array to string then saves to local storage
@@ -181,7 +194,3 @@ function closeUserDialog() {
 //     console.log('loaded all Tasks', allTasks);
 // }
 
-
-function setArray(key, array) {
-    backend.setItem(key, JSON.stringify(array));
-  }
