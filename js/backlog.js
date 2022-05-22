@@ -30,7 +30,7 @@ function renderBacklogTasks() {
                 </svg>
                 <span class="">${tasks[i].user}<br></a></span>
                 </td>
-                <td><a href="mailto:gabigibsnicht@mail.com">${users[i].mail}</td>
+                <td><a href="mailto:gabigibsnicht@mail.com">${users[length].mail}</td>
                 <td id="category">${tasks[i].category}</td>
                 <td id="status">${tasks[i].status}</td>
                 <td>${tasks[i].description}</td>
