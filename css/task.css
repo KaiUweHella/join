@@ -78,3 +78,7 @@ h3 {
 .task-h4{
   margin: 8px 0 4px 0;
 }
+
+.drag-erea-highlight{
+  background-color: #cccccc;
+}

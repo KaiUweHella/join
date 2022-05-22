@@ -26,23 +26,23 @@
 <body onload="showOverview()">
     <div w3-include-html="./html_templates/menu.html"></div>
     <div class="main columns" >
-        <div class="category">
+        <div class="category"  ondrop="moveTo('todo'); removeHighlight('todo-content')" ondragover="allowDrop(event); highlight('todo-content')" ondragleave="removeHighlight('todo-content')" id="todo-content">
             <h3>To Do</h3>
             <div class="all-tasks" id="todo">
                 
             </div>
         </div>
-        <div class="category">
+        <div class="category" ondrop="moveTo('inProgress'); removeHighlight('inProgress-content')" ondragover="allowDrop(event); highlight('inProgress-content')" ondragleave="removeHighlight('inProgress-content')" id="inProgress-content">
             <h3>In Progress</h3>
-            <div class="all-tasks" id="inProgress"></div>
+            <div class="all-tasks"  id="inProgress"></div>
         </div>
-        <div class="category">
+        <div class="category" ondrop="moveTo('testing'); removeHighlight('testing-content')" ondragover="allowDrop(event); highlight('testing-content')" ondragleave="removeHighlight('testing-content')" id="testing-content">
             <h3>Testing</h3>
-            <div class="all-tasks" id="testing"></div>
+            <div class="all-tasks"  id="testing"></div>
         </div>
-        <div class="category">
+        <div class="category" ondrop="moveTo('done'); removeHighlight('done-content')" ondragover="allowDrop(event); highlight('done-content')" ondragleave="removeHighlight('done-content')" id="done-content">
             <h3>Done</h3>
-            <div class="all-tasks" id="done"></div>
+            <div class="all-tasks"  id="done"></div>
         </div>
     </div>
 </body>

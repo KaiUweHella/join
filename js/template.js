@@ -1,6 +1,6 @@
-function cardHTML(tasks){
+function cardHTML(tasks, i){
     return /*html*/ `
-    <div class="task-each-category">
+    <div draggable="true" ondragstart="startDragging(${i})" class="task-each-category">
         <div class="color-field" style="background-color:var(--color-${tasks.urgency})"></div>
         <h4 class="task-h4">${tasks.title}</h4>
          <p class="task-description">${tasks.description}</p>
