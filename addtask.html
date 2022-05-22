@@ -46,17 +46,17 @@
         <form onsubmit="addTask(event)">
             <div class="input-main">
 
-                <!--Left side of form-->
+                <!--Left side of form -->
                 <div class="input-left">
 
                     <div class="mb-3">
                         <label for="title" class="form-label">TITLE</label>
-                        <input type="text" class="form-control" id="title" placeholder="Enter title for task">
+                        <input type="text" required class="form-control" id="title" placeholder="Enter title for task">
                     </div>
 
                     <label for="category" class="form-label">CATEGORY</label>
-                    <select class="form-select" id="category" aria-label="Default select example">
-                        <option selected>Select category</option>
+                    <select required class="form-select" id="category" aria-label="Default select example">
+                        <option selected></option>
                         <option value="marketing">marketing</option>
                         <option value="design">design</option>
                         <option value="sales">sales</option>
@@ -64,7 +64,7 @@
 
                     <div class="mb-3">
                         <label for="description" class="form-label label-margin">DESCRIPTION</label>
-                        <textarea class="form-control" id="description" rows="3"></textarea>
+                        <textarea required class="form-control" id="description" rows="3"></textarea>
                     </div>
                     <div id="confirm-text" class="confirm-text"></div>
 
@@ -78,8 +78,8 @@
                         id="due-date">
 
                     <label for="urgency" class="form-label ">URGENCY</label>
-                    <select class="form-select" id="urgency" aria-label="Default select example">
-                        <option selected>...</option>
+                    <select required class="form-select" id="urgency" aria-label="Default select example">
+                        <option  selected></option>
                         <option value="high">high</option>
                         <option value="medium">medium</option>
                         <option value="low">low</option>
@@ -101,7 +101,7 @@
                                     </path>
                                 </svg>
                             </div>
-                            <textarea id="selectedUser" class="addUser"></textarea>
+                            <textarea required id="selectedUser" class="addUser"></textarea>
 
                         </div>
                         <!--Div for buttons-->
