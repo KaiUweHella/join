@@ -1,25 +1,47 @@
 let tasks = [];
 
+// let task = {
+//     title: '',
+//     category: '',
+//     description: '',
+//     urgency: '',
+//     status: '',
+//     user: ''
+// };
 
-async function showBacklogTask(){
+let task = {
+    title: '',
+    category: '',
+    description: '',
+    date: '',
+    urgenc: '',
+    status: '',
+    user: ''
+};
+
+let colorsOfUrgency = {
+    low: '#61BD4F',
+    medium: '#F2D600',
+    high: '#EB5A46'
+}
+
+
+async function showBacklogTask() {
     await init();
     renderBacklogTasks();
-  }
+}
 
 function renderBacklogTasks() {
-    // let backlogTables = document.getElementById('backlogTable').value;
-
-    // backlogTable.innerHTML = '';
-
+    let backlogtable = document.getElementById('backlogTable');
+    backlogtable.innerHTML = '';
     for (let i = 0; i < tasks.length; i++) {
-        const task = tasks[i];
-
-        backlogTable.innerHTML += /*html*/ `
+        const backlogTask = tasks[i];
+        const colorOfUrgency = colorsOfUrgency[backlogTask['urgency']];
+        backlogtable.innerHTML += /*html*/ `
         
         <tbody>
-
-        <tr id="liveAlertBtn">
-        <th id="">${tasks[i].urgency}</th>
+        <tr id="liveAlertBtn"  class="taskButton" onclick="addToBoard()">
+        <th id="urgency-img"  style="color: ${colorOfUrgency}">${tasks[i].urgency}</th>
         <td id="user"><svg class="task-profile" xmlns="http://www.w3.org/2000/svg" width="32"
                 height="32" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
                 <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
@@ -35,7 +57,22 @@ function renderBacklogTasks() {
         <div id="liveAlertPlaceholder"></div>
     </tr>
     </tbody>`;
-
     }
-    
+
 }
+
+
+function addToBoard() {
+
+    // Push JSON to array "tasks" auf server
+    task.status = 'todo';
+    tasks.push(task);
+    setArray('tasks', tasks);
+    // await backend.setItem('tasks', JSON.stringify(tasks));
+}
+
+function setArray(key, array) {
+    backend.setItem(key, JSON.stringify(array));
+}
+
+ 

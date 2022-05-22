@@ -87,3 +87,15 @@ h5 {
     cursor: pointer;
 }
 
+.taskButton {
+    color: black;
+}
+
+table thead :hover {
+    background-color: white !important;
+}
+
+table tr:hover {
+    background-color: rgb(246, 244, 244);
+}
+
