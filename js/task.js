@@ -1,23 +1,4 @@
-let users = [
-  {
-    name: "Kai",
-    img: "url",
-    mail: "",
-    password: "",
-  },
-  {
-    name: "Brett",
-    img: "url",
-    mail: "",
-    password: "",
-  },
-  {
-    name: "Amar",
-    img: "url",
-    mail: "",
-    password: "",
-  },
-];
+
 
   async function showOverview(){
     await init();

@@ -1,46 +1,24 @@
-let tasks = [];
-
-// let task = {
-//     title: '',
-//     category: '',
-//     description: '',
-//     urgency: '',
-//     status: '',
-//     user: ''
-// };
-
-let task = {
-    title: '',
-    category: '',
-    description: '',
-    date: '',
-    urgenc: '',
-    status: '',
-    user: ''
+let colorsOfUrgency = {
+  low: "#61BD4F",
+  medium: "#F2D600",
+  high: "#EB5A46",
 };
 
-let colorsOfUrgency = {
-    low: '#61BD4F',
-    medium: '#F2D600',
-    high: '#EB5A46'
-}
-
-
 async function showBacklogTask() {
-    await init();
-    renderBacklogTasks();
+  await init();
+  renderBacklogTasks();
 }
 
 function renderBacklogTasks() {
-    let backlogtable = document.getElementById('backlogTable');
-    backlogtable.innerHTML = '';
-    for (let i = 0; i < tasks.length; i++) {
-        const backlogTask = tasks[i];
-        const colorOfUrgency = colorsOfUrgency[backlogTask['urgency']];
-        backlogtable.innerHTML += /*html*/ `
-        
+  let backlogtable = document.getElementById("backlogTable");
+  backlogtable.innerHTML = "";
+  for (let i = 0; i < tasks.length; i++) {
+    const backlogTask = tasks[i];
+    const colorOfUrgency = colorsOfUrgency[backlogTask["urgency"]];
+    if (backlogTask.status == "backlog") {
+      backlogtable.innerHTML += /*html*/ `
         <tbody>
-        <tr id="liveAlertBtn"  class="taskButton" onclick="addToBoard()">
+        <tr id="liveAlertBtn"  class="taskButton" onclick="addToBoard(${i})">
         <th id="urgency-img"  style="color: ${colorOfUrgency}">${tasks[i].urgency}</th>
         <td id="user"><svg class="task-profile" xmlns="http://www.w3.org/2000/svg" width="32"
                 height="32" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
@@ -58,21 +36,17 @@ function renderBacklogTasks() {
     </tr>
     </tbody>`;
     }
-
+  }
 }
 
-
-function addToBoard() {
-
-    // Push JSON to array "tasks" auf server
-    task.status = 'todo';
-    tasks.push(task);
-    setArray('tasks', tasks);
-    // await backend.setItem('tasks', JSON.stringify(tasks));
+function addToBoard(i) {
+  if (confirm("Aufgabe als todo einstellen")) {
+    tasks[i].status = "todo";
+    setArray("tasks", tasks);
+    renderBacklogTasks();
+  }
 }
 
 function setArray(key, array) {
-    backend.setItem(key, JSON.stringify(array));
+  backend.setItem(key, JSON.stringify(array));
 }
-
- 
