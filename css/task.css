@@ -82,3 +82,12 @@ h3 {
 .drag-erea-highlight{
   background-color: #cccccc;
 }
+
+.status{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  color: #cccccc;
+  font-size: 14px;
+}
