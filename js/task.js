@@ -75,6 +75,7 @@ function allowDrop(ev) {
 function moveTo(category){
   tasks[currentId]['status'] = category;
 
+  setArray('tasks', tasks);
   
   showCards();
 }
@@ -85,4 +86,12 @@ function highlight(id){
 
 function removeHighlight(id){
   document.getElementById(id).classList.remove('drag-erea-highlight');
+}
+
+function setArray(key, array) {
+  backend.setItem(key, JSON.stringify(array));
+}
+
+function getArray(key) {
+  return JSON.parse(backend.getItem(key));
 }
