@@ -5,14 +5,15 @@
     showCards();
   }
 
+
 function showCards() {
   clearOverview();
   for (let i = 0; i < tasks.length; i++) {
-    const element = tasks[i];
-    let id = assignStatus(element);
+    const task = tasks[i];
+    let id = assignStatus(task);
 
-    if(element.status != "backlog"){
-      document.getElementById(id).innerHTML += cardHTML(element, i);
+    if(task.status != "backlog"){
+      document.getElementById(id).innerHTML += cardHTML(task, i);
     }
   }
 }
