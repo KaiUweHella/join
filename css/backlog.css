@@ -42,13 +42,15 @@ h5 {
     vertical-align: middle !important;
     line-height: 0 !important;
     margin-left: -6px !important;
+    margin-bottom: 3px;
 }
 
 .table tr {
     border-top: 1px solid #dee2e6;
 }
 
-.table td, .table th {
+.table td,
+.table th {
     vertical-align: middle !important;
 }
 
@@ -62,7 +64,7 @@ h5 {
     /* border-left: 7px solid orange;     Standard JOIN Style */
     border-radius: 10px;
     cursor: pointer;
-    
+
 }
 
 .task-profile {
@@ -78,6 +80,12 @@ h5 {
 }
 
 
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #859aaf;
+}
+
+
 .double_arrow_up {
     font-size: 48px !important;
     color: red;
@@ -89,13 +97,87 @@ h5 {
 
 .taskButton {
     color: black;
+    font-size: 18px;
+
 }
 
-table thead :hover {
-    background-color: white !important;
+.taskButton a {
+    color: black;
 }
 
 table tr:hover {
-    background-color: rgb(246, 244, 244);
+
+    background-color: #f6fbff !important;
 }
 
+.head-table {
+    font-size: 18px;
+    background-color: #f1f1ff;
+    border-top: 2px solid #859aaf !important;
+    border-bottom: 2px solid black !important;
+}
+
+.head-table:hover {
+    background-color: #f1f1ff !important;
+
+}
+
+
+@media (max-width: 1000px) {
+
+    table,
+    tr,
+    td {
+        padding: 0;
+        /* border:1px solid black; */
+    }
+
+    table {
+        border: none;
+    }
+
+    thead {
+        display: none;
+    }
+
+    tr {
+        float: left;
+        width: 100%;
+        margin-bottom: 2em;
+    }
+
+    td {
+        float: left;
+        width: 100%;
+        padding: 1em;
+    }
+
+    td::before {
+        content: attr(data-label);
+        word-wrap: break-word;
+        /* background: #eee; */
+        /* border-right:2px solid black; */
+        width: 20%;
+        float: left;
+        /* padding:1em; */
+        /* font-weight: bold; */
+        /* margin:-1em 1em -1em -1em; */
+    }
+
+    #user {
+        display: flex;
+        align-items: center;
+    }
+
+}
+
+@media (max-width: 870px) {
+
+    .backlog {
+        padding-left: 40px;
+    }
+
+    .headline-backlog {
+        padding-top: 115px;
+    }
+}
