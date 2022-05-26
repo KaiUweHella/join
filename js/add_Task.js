@@ -41,9 +41,11 @@ let users = [
      createJsonArrayForTask(title, category, description, date, urgency, user);       
      resetFormObjects(title, category, description, date, urgency, user); 
 
+     //Text to acknowledge that form information has been sent 
      document.getElementById('confirm-text').innerHTML = 
      /*html*/`Task assigned successfully`
 
+     //acknowlegement text removed after 2 seconds
      setTimeout(function(){
      document.getElementById('confirm-text').innerHTML = ''
      },2000);
@@ -75,7 +77,8 @@ let users = [
         'date': date.value,
         'urgency' : urgency.value,
         'status' : 'backlog',
-        'user' : user.value
+        'user' : user.value,
+        'AllUser' : [{"name":"Kai", "img":"./img/Kai-avatar.png", "mail":"Kai@test.com","password":"Kai_01"}, {"name":"Brett", "img":"./img/Brett-avatar.png", "mail":"Brett@test_1.com", "password":"Brett_01" }, { "name":"Amar", "img":"./img/Amar-avatar.png", "mail":"Amar@test_2.com", "password":"Amar_01" } ]
            };
     // Push JSON to array "tasks" auf server
     tasks.push(task); 
