@@ -1,10 +1,9 @@
 
 
-  async function showOverview(){
+async function showOverview(){
     await init();
     showCards();
   }
-
 
 function showCards() {
   clearOverview();
