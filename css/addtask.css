@@ -37,12 +37,9 @@ body {
     margin-top: 20px;
 }
 .avatar{
-    width: 70px;
+    width: 55px;
     margin-right: 10px;
     align-items: center;
-}
-.add-user{
-    
 }
 
 .plus-svg{
@@ -54,9 +51,8 @@ body {
     opacity: 100%;
 }
 .input-right-bottom{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    
+    
 }
 
 .bg-grey{
@@ -124,15 +120,25 @@ body {
     margin-left: 50px;
 }
 .submit-area{
-    margin-top: 60px
+    margin-top: 20px
 }
 .confirm-text{
     color: rgb(77, 150, 54);
     font-weight: bold;
+    margin-top: 20px;
+}
+#user-img{
+    display: flex;
+    align-items: center;
+}
+.added-user{
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
 }
 
 
-@media(max-width: 1100px) {
+@media(max-width: 870px) {
     .input-main{
         flex-direction: column;
     }
@@ -143,17 +149,16 @@ body {
     .input-left{
         width: 100%;
     }
+    .head-text{
+        margin-top: 146px;
+    }
+    .main{
+        margin-left: 20px !important;
+    }
     
  }
 
- @media(max-width: 695px) {
-    .submit-area{
-        margin-top: 20px;
-    }
-    .input-right-bottom{
-        flex-direction: column;
-    }
- }
+
 
 
 
