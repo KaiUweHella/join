@@ -1,4 +1,0 @@
-function templateBacklogTask(tasks, colorOfUrgency) {
-    
-
-}
