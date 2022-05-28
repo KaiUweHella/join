@@ -72,7 +72,22 @@ h3 {
   height: 32px;
   border-radius: 50%;
   object-fit: cover;
-  margin: 4px 4px;
+}
+
+.avatar-ov {
+  width: 32px;
+  height: 32px;
+  margin: 4px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.avatar:nth-child(2) {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-left: -16px;
 }
 
 .task-h4{
@@ -90,4 +105,34 @@ h3 {
   width: 100%;
   color: #cccccc;
   font-size: 14px;
+}
+
+.task-member{
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.number-of-member{
+  font-weight: bold;
+  color: #ccc;
+  padding-left: 4px;
+}
+
+.member-overview{
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  bottom: 12px;
+  padding: 8px;
+  border-radius: 8px;
+  background-color: white;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 5px 5px 16px 0px rgba(0,0,0,0.5);
+  min-width: 120px;
+}
+
+.d-none{
+  display: none !important;
 }
