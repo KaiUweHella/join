@@ -71,6 +71,13 @@ h5 {
     margin: 5px;
 }
 
+.user-img img {
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
 #backlogTask {
     cursor: pointer;
 }
