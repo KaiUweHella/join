@@ -10,9 +10,10 @@ function loadImages() {
     document.getElementById("user-img").innerHTML = "";
     for (let i = 0; i < selectUser.length; i++) {
       let userName = selectUser[i].name;
+      let userPic = selectUser[i].img;
       document.getElementById("user-img").innerHTML += `                                    
       <div class="added-user">
-      <img class="avatar" src="./img/avatar.png">
+      <img class="avatar" src=${userPic}>
       <span>${userName}</span>
       </div>`;
     }
