@@ -136,3 +136,19 @@ h3 {
 .d-none{
   display: none !important;
 }
+
+@media (max-width: 870px){
+  .category {
+    min-height: 240px;
+    min-width: 200px;
+    width: 100%;
+  }
+
+  .columns {
+    justify-content: center;
+  }
+
+  .member-overview{
+    left: 0%;
+  }
+}
