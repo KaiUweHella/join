@@ -26,7 +26,6 @@ function showCards() {
 function loadImgOfMember(task, j) {
   for (let i = 0; i <= 1; i++) {
     let user = task.user[i];
-    console.log(user.img);
     if (user) {
       document.getElementById(`task-member${j}`).innerHTML += memberHTML(
         user.img

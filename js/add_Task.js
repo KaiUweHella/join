@@ -126,11 +126,13 @@ function showUser(i) {
     document.getElementById("user-container").innerHTML += /*html*/ `
       <!-- <div class="individualUser" onclick="addUser(${i}, '${userName}')"> -->
       <div class="individualUser" onclick="addUser(${i})">
-         <img class="avatar" src="${userImg}">
-         <div class="userDetails">
-            <span class="userName">${userName}</span>
-            <span class="userName">${userMail}</span>
-         </div>
+          <div>
+            <img class="avatar" src="${userImg}">
+          </div>
+          <div class="userDetails">
+              <span class="userName">${userName}</span>
+              <span class="userName">${userMail}</span>
+          </div>
          <!-- div for check symbol -->
          <div id="checked_${i}"></div>
       </div>`;

@@ -47,3 +47,21 @@ function memberOverviewHTML(img){
         <img class="avatar-ov" src="${img}" alt="">
     `;
 }
+
+function backlogTableHTML(i, colorOfUrgency){
+    return /*html*/ `
+            <tbody>
+                <tr id="liveAlertBtn"  class="taskButton" onclick="addToBoard(${i})">
+                    <td class="priority-con" data-label="Priority" id="urgency-img"  style="color: ${colorOfUrgency}">${tasks[i].urgency}</td>
+                    <td id="user-names${i}">
+                        <!-- load images -->
+                    </td>
+                    <td data-label="Mail"><a href="mailto:gabigibsnicht@mail.com">${users[2].mail}</td>
+                    <td data-label="Category" id="category">${tasks[i].category}</td>
+                    <td data-label="Status" id="status">${tasks[i].status}</td>
+                    <td data-label="Details">${tasks[i].description}</td>
+                    <div id="liveAlertPlaceholder"></div>
+                </tr>
+            </tbody>
+            `;
+}

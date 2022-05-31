@@ -71,7 +71,7 @@ h5 {
     margin: 5px;
 }
 
-.user-img img {
+.user-img{
     height: 50px;
     width: 50px;
     object-fit: cover;
