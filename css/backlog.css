@@ -71,11 +71,16 @@ h5 {
     margin: 5px;
 }
 
-.user-img{
+.user-img {
     height: 50px;
     width: 50px;
     object-fit: cover;
     border-radius: 50%;
+    margin-right: 3px;
+}
+
+.user-name {
+    margin-right: 3px;
 }
 
 #backlogTask {
