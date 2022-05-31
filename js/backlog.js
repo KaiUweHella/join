@@ -10,11 +10,11 @@ async function showBacklogTask() {
 }
 
 
-
 function renderBacklogTasks() {
     let backlogtable = document.getElementById("backlogTable");
     backlogtable.innerHTML = "";
     for (let i = 0; i < tasks.length; i++) {
+        
         const backlogTask = tasks[i];
         // const user = users;
         const colorOfUrgency = colorsOfUrgency[backlogTask["urgency"]];
@@ -23,10 +23,10 @@ function renderBacklogTasks() {
         <tbody>
             <tr id="liveAlertBtn"  class="taskButton" onclick="addToBoard(${i})">
                 <td class="priority-con" data-label="Priority" id="urgency-img"  style="color: ${colorOfUrgency}">${tasks[i].urgency}</td>
-                <td data-label="User" class="user-img" id="user"><img src="${users[2].img}" alt="">
-                <span class="">${users[2].name}</span>
+                <td data-label="User" class="user-img" id="user"><img src="${users[1].img}" alt="">
+                <span class="">${users[1].name}</span>
                 </td>
-                <td data-label="Mail"><a href="mailto:gabigibsnicht@mail.com">${users[2].mail}</td>
+                <td data-label="Mail"><a href="mailto:gabigibsnicht@mail.com">${users[1].mail}</td>
                 <td data-label="Category" id="category">${tasks[i].category}</td>
                 <td data-label="Status" id="status">${tasks[i].status}</td>
                 <td data-label="Details">${tasks[i].description}</td>
