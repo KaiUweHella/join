@@ -101,8 +101,8 @@ function resetFormObjects(title, category, description, date, urgency) {
   title.value = "";
   category.value = "";
   description.value = "";
+  urgency.value = "";
   date.value = "";
-  urgency = "";
   
 }
 
