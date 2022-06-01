@@ -102,6 +102,7 @@ body {
         position: absolute;
         top: 35px;
         right: 35px;
+        fill: aliceblue;
         /* display: flex; */
         font-size: 50px;
         color: aliceblue;

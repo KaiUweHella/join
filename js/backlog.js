@@ -9,15 +9,18 @@ async function showBacklogTask() {
   renderBacklogTasks();
 }
 
+
+
 function renderBacklogTasks() {
-  let backlogtable = document.getElementById("backlogTable");
-  backlogtable.innerHTML = "";
-  for (let i = 0; i < tasks.length; i++) {
-    const backlogTask = tasks[i];
-    // const user = users;
-    const colorOfUrgency = colorsOfUrgency[backlogTask["urgency"]];
-    if (backlogTask.status == "backlog") {
-      backlogtable.innerHTML += backlogTableHTML(i, colorOfUrgency);
+    let backlogtable = document.getElementById("backlogTable");
+    backlogtable.innerHTML = "";
+    for (let i = 0; i < tasks.length; i++) {
+        
+        const backlogTask = tasks[i];
+        // const user = users;
+        const colorOfUrgency = colorsOfUrgency[backlogTask["urgency"]];
+        if (backlogTask.status == "backlog") {
+            backlogtable.innerHTML += backlogTableHTML(i, colorOfUrgency);
 
       loadUser(i);
     }
@@ -30,8 +33,8 @@ function loadUser(i) {
   for (let j = 0; j < task.user.length; j++) {
     const user = task.user[j];
     document.getElementById(`user-names${i}`).innerHTML += /*html*/ `
-            <img class="user-img"  src="${user.img}" alt="">
-            <span class="">${user.name}</span>
+            <img class="user-img" src="${user.img}" alt="">
+            <span class="user-name">${user.name}</span>
         `;
   }
 }
