@@ -40,7 +40,7 @@ function addTask(event) {
   
 
   createJsonArrayForTask(title, category, description, date, urgency);
-  resetFormObjects(title, category, description, date, urgency);
+  resetFormObjects();
   // task sent confirmation text displayed then turned off after 2 seconds
   document.getElementById(
     "confirm-text"
@@ -93,18 +93,18 @@ function createJsonArrayForTask(title, category, description, date, urgency) {
  * @param {string} date - due date as string
  * @param {string} urgency task urgency
  */
-function resetFormObjects(title, category, description, date, urgency) {
+function resetFormObjects() {
   // Reset form objects
   selectUser = [];
   //selected user images removed
   document.getElementById("user-img").innerHTML = "";
-  title.value = "";
-  category.value = "";
-  description.value = "";
-  urgency.value = "";
-  date.value = "";
-  
+  title = document.getElementById("title").value = "";
+  category = document.getElementById("category").value = "";
+  escription = document.getElementById("description").value = "";
+  date = document.getElementById("due-date").value = "";
+  urgency = document.getElementById("urgency").value = "";
 }
+
 
 /**
  * This function brings up dialog box with users to assign to the task (From array users on Backend server )
