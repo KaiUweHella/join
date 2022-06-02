@@ -11,8 +11,12 @@ body {
     color: blue;
     font-size: 13px;
 }
+.heading{
+    margin-bottom: 40px;
+}
 .main{
     margin-right: 40px;
+    margin-top: 22px !important;
 }
 .input-main{
     display: flex;
@@ -54,9 +58,8 @@ body {
     cursor: pointer;
     opacity: 100%;
 }
-.input-right-bottom{
-    
-    
+.btn-outline-primary{
+    margin-right: 8px;
 }
 
 .bg-grey{
@@ -157,7 +160,10 @@ body {
         margin-top: 146px;
     }
     .main{
-        margin-left: 20px !important;
+        margin-left: 40px !important;
+    }
+    .heading{
+        margin-bottom: 10px;
     }
     
  }
