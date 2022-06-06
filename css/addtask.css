@@ -23,8 +23,7 @@ body {
     background-color: rgba(28, 68, 212, 0.2);
     border-radius: 10px;
     padding: 20px;
-    max-width: 1000px;
-    
+    max-width: 1000px; 
 }
 .input-left{
     width: 50%;

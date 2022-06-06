@@ -38,6 +38,11 @@ function addTask(event) {
   let date = document.getElementById("due-date");
   let urgency = document.getElementById("urgency");
   
+  
+  if (selectUser = []) {
+    document.getElementById("confirm-text").innerHTML = `not selected`
+  }
+
 
   createJsonArrayForTask(title, category, description, date, urgency);
   resetFormObjects();
@@ -156,7 +161,14 @@ function addUser(i) {
     // if statement compares the user in array all users "users" with user in the selected users array "selectUser" if 
     // user exists warning is logged --- with return we get out of the function.
     if (userName == selection.name) {
+      selectUser.splice(i, 1);
+      console.log('removed', selectUser)
+      //document.getElementById(`checked_${i}`).innerHTML = ''
+      showCheckUp();
+
       console.log("User würde schon hinzugefügt");
+      loadImages();
+      
       return;
     }
   }
@@ -165,7 +177,7 @@ function addUser(i) {
   selectUser.push(userInfo);
 
   console.log(selectUser);
-
+  
   loadImages();
   showCheckUp();
 
@@ -177,25 +189,21 @@ function addUser(i) {
  */
 function showCheckUp() {
   for (let i = 0; i < users.length; i++) {
+    //first for all divs 'checked_0, 1, 2 ... the ticks are removed if present...
+    document.getElementById(`checked_${i}`).innerHTML = "";
     const userName = users[i].name;
     for (let j = 0; j < selectUser.length; j++) {
       const selectedUserName = selectUser[j].name;
       if (userName == selectedUserName) {
         document.getElementById(
           `checked_${i}`
-        ).innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" onclick="removeUser(${j, i})" width="16" height="16" fill="currentColor" class="bi bi-check-circle svg-check" viewBox="0 0 16 16">
+        ).innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle svg-check" viewBox="0 0 16 16">
            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
            <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
            </svg>`;
-      }
+      } 
     }
   }
-}
-
-function removeUser(j, i) {
-  selectUser.splice(j, 1);
-  console.log('removed', selectUser)
-  document.getElementById(`checked_${i}`).innerHTML = ''
 }
 
 /**
