@@ -45,6 +45,16 @@ h5 {
     margin-bottom: 3px;
 }
 
+
+/* .priority-con {
+    background: url(../img/icons_google/low-icon.png) no-repeat;
+} */
+
+/* .priority-con img {
+    height: 14px !important;
+    width: 14px !important;
+} */
+
 .table tr {
     border-top: 1px solid #dee2e6;
 }
@@ -72,8 +82,8 @@ h5 {
 }
 
 .user-img {
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 40px;
     object-fit: cover;
     border-radius: 50%;
     margin-right: 3px;
@@ -95,6 +105,11 @@ h5 {
 .table thead th {
     vertical-align: bottom;
     border-bottom: 2px solid #859aaf;
+}
+
+
+#backlogTable t, table ,tbody, tr, td {
+    max-height: 42px !important;
 }
 
 
@@ -131,7 +146,97 @@ table tr:hover {
 
 .head-table:hover {
     background-color: #f1f1ff !important;
+}
 
+#dialog-box {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 200px;
+    /* Location of the box */
+    padding-left: 220px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+.dialogb {
+    position: absolute;
+    background-color: #fefefe;
+    margin: auto;
+    color: black !important;
+    font-size: 20px;
+    padding: 15px;
+    border: 1px solid #888;
+    width: 600px;
+    height: 500px;
+    border-radius: 15px;
+}
+
+.dialog-title {
+    display: inline;
+    font-size: xx-large;
+    margin-bottom: 40px;
+}
+
+.dialog-table {
+    width: 300px;
+}
+
+.table td {
+    padding: 0;
+    height: 50px;
+    max-height: 50px;
+    min-height: 50px;
+}
+
+.table-con {
+    display: flex;
+    margin-top: 30px;
+}
+
+
+.dialog-btn {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+
+.add-btn {
+    width: 145px;
+    height: 40px;
+    border-radius: 5px;
+    color: white;
+    background-color: #2c2ca8;
+    border: 3px solid black;
+}
+
+.close-btn {
+    width: 90px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: white;
+    border: 3px solid black;
+
+}
+
+.details-con {
+    max-width: 15ch;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 
