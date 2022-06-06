@@ -59,8 +59,8 @@ function backlogTableHTML(i, colorOfUrgency){
                         <!-- load images -->
                     </td>
                     <!-- <td data-label="Mail"><a href="mailto:gabigibsnicht@mail.com">${users[2].mail}</td> -->
-                    <td data-label="Category" id="category">${tasks[i].category}</td>
-                    <td data-label="Status" id="status">${tasks[i].status}</td>
+                    <td  class="category-con" data-label="Category" id="category">${tasks[i].category}</td>
+                    <td class="status-con" data-label="Status" id="status">${tasks[i].status}</td>
                     <td class="details-con" data-label="Details">${tasks[i].description}</td>
                     <div id="liveAlertPlaceholder"></div>
                 </tr>

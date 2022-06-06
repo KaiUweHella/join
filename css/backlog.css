@@ -195,6 +195,11 @@ table tr:hover {
     width: 300px;
 }
 
+.table th {
+    height: 50px;
+    padding: 0 !important;
+}
+
 .table td {
     padding: 0;
     height: 50px;
@@ -237,6 +242,10 @@ table tr:hover {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+}
+
+.category-con {
+    text-align: center;
 }
 
 
