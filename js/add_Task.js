@@ -37,27 +37,26 @@ function addTask(event) {
   let description = document.getElementById("description");
   let date = document.getElementById("due-date");
   let urgency = document.getElementById("urgency");
-  
-  
-  if (selectUser = []) {
+
+  if (selectUser == ![]) {
     document.getElementById("confirm-text").innerHTML = `not selected`
+  } else {
+    createJsonArrayForTask(title, category, description, date, urgency);
+    resetFormObjects();
+    // task sent confirmation text displayed then turned off after 2 seconds
+    document.getElementById(
+      "confirm-text"
+    ).innerHTML = /*html*/ `Task assigned successfully`;
+
+    setTimeout(function () {
+      document.getElementById("confirm-text").innerHTML = "";
+    }, 4000);
+    // selected users array emptied
+    selectUser = [];
+    //Selected user/s displayed
+    loadImages();
   }
-
-
-  createJsonArrayForTask(title, category, description, date, urgency);
-  resetFormObjects();
-  // task sent confirmation text displayed then turned off after 2 seconds
-  document.getElementById(
-    "confirm-text"
-  ).innerHTML = /*html*/ `Task assigned successfully`;
-
-  setTimeout(function () {
-    document.getElementById("confirm-text").innerHTML = "";
-  }, 4000);
-  // selected users array emptied
-  selectUser = [];
-  //Selected user/s displayed
-  loadImages();
+  
 }
 
 
@@ -129,13 +128,14 @@ function showUser() {
     document.getElementById("user-container").innerHTML += /*html*/ `
       <!-- <div class="individualUser" onclick="addUser(${i}, '${userName}')"> -->
       <div class="individualUser" onclick="addUser(${i})">
-          <div>
+          <div class="user-show-box">
             <img class="avatar" src="${userImg}">
-          </div>
-          <div class="userDetails">
+            <div class="userDetails">
               <span class="userName">${userName}</span>
               <span class="userName">${userMail}</span>
+           </div>
           </div>
+          
          <!-- div for check symbol -->
          <div id="checked_${i}"></div>
       </div>`;
@@ -221,6 +221,14 @@ function closeUserDialog() {
  */
 function setArray(key, array) {
   backend.setItem(key, JSON.stringify(array));
+}
+
+
+
+function checkIfUserSelected() {
+  if (selectUser = []){
+    alert('add User')
+  }
 }
 
 

@@ -106,13 +106,18 @@ body {
     display: flex;
     align-items: center;
     cursor: pointer;
+    justify-content: space-between;
 }
 .userDetails{
     display: flex;
     flex-direction: column;
 }
+.user-show-box{
+    display: flex;
+}
 .individualUser :hover{
     color: rgba(40, 86, 185, 0.5);
+    
 }
 .addUser{
     resize: none;
