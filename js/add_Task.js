@@ -38,9 +38,13 @@ function addTask(event) {
   let date = document.getElementById("due-date");
   let urgency = document.getElementById("urgency");
 
+  //if statement to check if user has been assigned
   if (selectUser == ![]) {
-    document.getElementById("confirm-text").innerHTML = `not selected`
+    document.getElementById("user-img").innerHTML = 
+    //div with warning to assign a user
+    /*html*/ `<div class="userWarning"><img class="Exclaim" src="./img/Exclaimation.png"><span>Assign user.</span></div>`
   } else {
+    //otherwise push the data to json array
     createJsonArrayForTask(title, category, description, date, urgency);
     resetFormObjects();
     // task sent confirmation text displayed then turned off after 2 seconds
@@ -159,11 +163,11 @@ function addUser(i) {
   for (let i = 0; i < selectUser.length; i++) {
     let selection = selectUser[i];
     // if statement compares the user in array all users "users" with user in the selected users array "selectUser" if 
-    // user exists warning is logged --- with return we get out of the function.
+    // user exists then the user will be spliced out of the array..
     if (userName == selection.name) {
       selectUser.splice(i, 1);
       console.log('removed', selectUser)
-      //document.getElementById(`checked_${i}`).innerHTML = ''
+      //ticks shown next to selected users
       showCheckUp();
 
       console.log("User würde schon hinzugefügt");
@@ -225,10 +229,10 @@ function setArray(key, array) {
 
 
 
-function checkIfUserSelected() {
+/* function checkIfUserSelected() {
   if (selectUser = []){
     alert('add User')
   }
-}
+} */
 
 

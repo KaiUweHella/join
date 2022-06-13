@@ -130,6 +130,15 @@ body {
     fill: rgb(32, 90, 14);
     margin-left: 50px;
 }
+.userWarning{
+    padding: 5px;
+    background-color: white;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+.Exclaim{
+    margin-right: 5px;
+}
 .submit-area{
     margin-top: 20px
 }
