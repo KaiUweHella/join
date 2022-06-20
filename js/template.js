@@ -1,5 +1,5 @@
 function cardHTML(tasks, i) {
-  return /*html*/ `
+    return /*html*/ `
     <div draggable="true" ondragstart="startDragging(${i})" class="task-each-category">
         <div class="status">
             <div class="color-field" style="background-color:var(--color-${
@@ -30,40 +30,76 @@ function cardHTML(tasks, i) {
     `;
 }
 
-function memberNUmberHTML(length){
+function memberNUmberHTML(length) {
     return /*html*/ `
     <span class="number-of-member">+${length}</span>
     `;
 }
 
-function memberHTML(img){
+function memberHTML(img) {
     return /*html*/ `
         <img class="avatar" src="${img}" alt="">
     `;
-}   
+}
 
-function memberOverviewHTML(img){
+function memberOverviewHTML(img) {
     return /*html*/ `
         <img class="avatar-ov" src="${img}" alt="">
     `;
 }
 
-function backlogTableHTML(i, colorOfUrgency){
+function backlogTableHTML(i, colorOfUrgency) {
     return /*html*/ `
+            <table>
             <tbody>
-                <tr id="liveAlertBtn"  class="taskButton" onclick="addToBoard(${i})">
-                    <td class="priority-con" data-label="Priority" id="urgency-img"  style="background: url(${colorOfUrgency}) no-repeat center">
+                <tr id="liveAlertBtn"  class="taskButton responsive-display" onclick="addToBoard(${i})">
+                    <td class="priority-con urgency-img-center" id="urgency-img"  style="background: url(${colorOfUrgency}) no-repeat center">
                     <!-- ${tasks[i].urgency} -->
                     </td>
-                    <td id="user-names${i}">
+                    <!-- <td class="users-con" id="user-names${i}"> -->
                         <!-- load images -->
-                    </td>
-                    <!-- <td data-label="Mail"><a href="mailto:gabigibsnicht@mail.com">${users[2].mail}</td> -->
-                    <td  class="category-con" data-label="Category" id="category">${tasks[i].category}</td>
-                    <td class="status-con" data-label="Status" id="status">${tasks[i].status}</td>
-                    <td class="details-con" data-label="Details">${tasks[i].description}</td>
+                    <!-- </td> -->
+                    <td  class="category-con" id="category">${tasks[i].category}</td>
+                    <td class="status-con" id="status">${tasks[i].status}</td>
+                    <td class="details-con">${tasks[i].description}</td>
                     <div id="liveAlertPlaceholder"></div>
                 </tr>
             </tbody>
+            </table>
+            <div class="mobile-display">
+                <div class="mobile-version-con" onclick="addToBoard(${i})">
+                    <div class="mobile-urgency" style="background: url(${colorOfUrgency}) no-repeat center"></div>
+                    <span class="info-con-mobile">
+                        <span class="title-mobile">${tasks[i].title}</span>
+                        <div class="category-mobile">${tasks[i].category}</div>
+                    </span>
+                    <div class="details-con-mobile">
+                    <span>Details</span>
+                    <span class="max-width-ch">${tasks[i].description}</span>
+                    </div>
+
+                </div>
+            </div>
             `;
 }
+
+// {/* <table class="mobile-display">
+// <tr class="mobile-display">
+//     <th>Urgency</th>
+//     <td></td>
+// </tr>
+// <tr class="mobile-display">
+//   <th>Category</th>
+//   <td>${tasks[i].category}</td>
+// </tr>
+
+// <tr class="mobile-display">
+//   <th>Status</th>
+//   <td>${tasks[i].status}</td>
+// </tr>
+
+// <tr class="mobile-display">
+//   <th>Details</th>
+//   <td>${tasks[i].description}</td>
+// </tr>
+// </table> */}

@@ -14,9 +14,9 @@ h5 {
     margin: 0;
 }
 
-.headline-backlog {
+/* .headline-backlog {
     padding-top: 50px;
-}
+} */
 
 .headline {
     color: #2c2ca8;
@@ -41,8 +41,9 @@ h5 {
     font-size: 48px !important;
     vertical-align: middle !important;
     line-height: 0 !important;
-    margin-left: -6px !important;
     margin-bottom: 3px;
+    display: flex;
+    justify-content: center;
 }
 
 
@@ -87,10 +88,21 @@ h5 {
     object-fit: cover;
     border-radius: 50%;
     margin-right: 3px;
+
+}
+
+.user-images-names {
+    display: flex;
+    flex-direction: column;
+    margin-right: 22px;
 }
 
 .user-name {
     margin-right: 3px;
+}
+
+.users-con {
+    text-align: center;
 }
 
 #backlogTask {
@@ -105,11 +117,6 @@ h5 {
 .table thead th {
     vertical-align: bottom;
     border-bottom: 2px solid #859aaf;
-}
-
-
-#backlogTable t, table ,tbody, tr, td {
-    max-height: 42px !important;
 }
 
 
@@ -149,27 +156,19 @@ table tr:hover {
 }
 
 #dialog-box {
+    align-items: center;
     display: none;
-    /* Hidden by default */
     position: fixed;
-    /* Stay in place */
-    z-index: 1;
-    /* Sit on top */
-    padding-top: 200px;
-    /* Location of the box */
-    padding-left: 220px;
+    z-index: 2;
     left: 0;
+    justify-content: center;
     top: 0;
+    padding-left: 200px;
     width: 100%;
-    /* Full width */
     height: 100%;
-    /* Full height */
     overflow: auto;
-    /* Enable scroll if needed */
     background-color: rgb(0, 0, 0);
-    /* Fallback color */
     background-color: rgba(0, 0, 0, 0.4);
-    /* Black w/ opacity */
 }
 
 .dialogb {
@@ -189,6 +188,10 @@ table tr:hover {
     display: inline;
     font-size: xx-large;
     margin-bottom: 40px;
+    max-width: 20ch;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .dialog-table {
@@ -248,53 +251,91 @@ table tr:hover {
     text-align: center;
 }
 
+.urgency-img-center {
+    /* width: 50px; */
+    width: min-content;
+    text-align: center;
+}
 
-@media (max-width: 1000px) {
+.date-con {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    color: #726f6f;
+}
 
-    table,
-    tr,
-    td {
-        padding: 0;
-        /* border:1px solid black; */
-    }
+.info-table {
+    background-color: #eaeaff !important;
+    border-radius: 10px;
+    padding: 10px;
+}
 
-    table {
-        border: none;
-    }
+.info-table:hover {
+    background-color: #2c2ca8;
+}
 
-    thead {
+.mobile-urgency {
+    width: 32px;
+    height: 45px;
+    padding-left: 60px;
+}
+
+.mobile-version-con {
+    display: flex;
+    margin-bottom: 6px;
+    background: #fcfcfc;
+    border-radius: 7px;
+    padding: 10px;
+}
+
+.info-con-mobile {
+    padding-left: 45px;   
+}
+
+.title-mobile {
+    font-size: x-large;
+}
+
+.category-mobile {
+    background-color: #03a9f4;
+    border-radius: 7px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    font-variant: all-small-caps;
+}
+
+.details-con-mobile {
+    display: grid;
+    padding-left: 45px;
+    color: gray;
+}
+
+.max-width-ch {
+    max-width: 12ch;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.user-box-dialog {
+    display: grid;
+    margin-top: 60px;
+}
+
+.gray-color {
+    color: #726f6f;
+}
+
+.user-names-dialog {
+    display: flex;
+    margin-top: 10px;
+}
+
+@media (min-width: 870px) {
+   
+     .mobile-display {
         display: none;
     }
-
-    tr {
-        float: left;
-        width: 100%;
-        margin-bottom: 2em;
-    }
-
-    td {
-        float: left;
-        width: 100%;
-        padding: 1em;
-    }
-
-    td::before {
-        content: attr(data-label);
-        word-wrap: break-word;
-        /* background: #eee; */
-        /* border-right:2px solid black; */
-        width: 20%;
-        float: left;
-        /* padding:1em; */
-        /* font-weight: bold; */
-        /* margin:-1em 1em -1em -1em; */
-    }
-
-    #user {
-        display: flex;
-        align-items: center;
-    }
-
 }
 
 @media (max-width: 870px) {
@@ -306,4 +347,20 @@ table tr:hover {
     .headline-backlog {
         padding-top: 115px;
     }
+    .responsive-display {
+        display: none;
+    }
+    table {
+        border: none;
+    }
+
+    thead {
+        display: none;
+    }
+
+    #dialog-box {
+        padding-left: 0 !important;
+    }
+
+
 }
