@@ -95,6 +95,8 @@ h5 {
     display: flex;
     flex-direction: column;
     margin-right: 22px;
+    align-items: center;
+    text-align: center;
 }
 
 .user-name {
@@ -181,7 +183,7 @@ table tr:hover {
     border: 1px solid #888;
     width: 600px;
     height: 500px;
-    border-radius: 15px;
+    border-radius: 16px;
 }
 
 .dialog-title {
@@ -195,13 +197,23 @@ table tr:hover {
 }
 
 .dialog-table {
-    width: 300px;
+    width: 515px;
 }
 
 .table th {
     height: 50px;
     padding: 0 !important;
 }
+
+.info-table td {
+    padding-left: 18px !important;
+    margin-right: 18px !important;
+}
+
+.font-variant {
+    font-variant: all-small-caps;
+}
+
 
 .table td {
     padding: 0;
@@ -210,11 +222,14 @@ table tr:hover {
     min-height: 50px;
 }
 
+.display-block {
+    display: block;
+}
+
 .table-con {
     display: flex;
     margin-top: 30px;
 }
-
 
 .dialog-btn {
     position: absolute;
@@ -259,7 +274,7 @@ table tr:hover {
 
 .date-con {
     position: absolute;
-    top: 20px;
+    top: 19px;
     right: 25px;
     color: #726f6f;
 }
@@ -289,11 +304,16 @@ table tr:hover {
 }
 
 .info-con-mobile {
-    padding-left: 45px;   
+    padding-left: 6px;   
 }
 
 .title-mobile {
-    font-size: x-large;
+    font-size: 16px;
+    width: 17ch;
+    overflow: hidden;
+    display: block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .category-mobile {
@@ -312,9 +332,10 @@ table tr:hover {
 }
 
 .max-width-ch {
-    max-width: 12ch;
+    max-width: 15ch;
     overflow: hidden;
     text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .user-box-dialog {
@@ -341,7 +362,7 @@ table tr:hover {
 @media (max-width: 870px) {
 
     .backlog {
-        padding-left: 40px;
+        padding-left: 10px;
     }
 
     .headline-backlog {
@@ -350,6 +371,11 @@ table tr:hover {
     .responsive-display {
         display: none;
     }
+
+    .headline {
+        font-size: 15px;
+    }
+
     table {
         border: none;
     }
@@ -362,5 +388,36 @@ table tr:hover {
         padding-left: 0 !important;
     }
 
+    h1 {
+        font-size: 35px !important;
+    }
+
+    .backlog-table {
+        margin-top: 18px;
+        padding-right: 25px;
+    }
+
+
+}
+
+@media (max-width: 650px) {
+
+    .dialog-title {
+        font-size: 20px;
+    }
+
+    .dialogb {
+        font-size: 15px;
+        width: 320px;
+    }
+
+    .dialog-table {
+        width: 270px;
+    }
+
+    .date-con {
+        top: 50px;
+        left: 18px;
+    }
 
 }

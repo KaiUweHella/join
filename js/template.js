@@ -82,24 +82,3 @@ function backlogTableHTML(i, colorOfUrgency) {
             </div>
             `;
 }
-
-// {/* <table class="mobile-display">
-// <tr class="mobile-display">
-//     <th>Urgency</th>
-//     <td></td>
-// </tr>
-// <tr class="mobile-display">
-//   <th>Category</th>
-//   <td>${tasks[i].category}</td>
-// </tr>
-
-// <tr class="mobile-display">
-//   <th>Status</th>
-//   <td>${tasks[i].status}</td>
-// </tr>
-
-// <tr class="mobile-display">
-//   <th>Details</th>
-//   <td>${tasks[i].description}</td>
-// </tr>
-// </table> */}

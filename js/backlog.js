@@ -32,7 +32,6 @@ function loadUser(i) {
          <img class="user-img" src="${user.img}" alt="">
          <span class="user-name">${user.name}</span>
     </div>
-
         `;
   }
   // addToBoard(i);
@@ -50,29 +49,26 @@ function addToBoard(i) {
           <span class="gray-color">Added to</span>
           <span class="user-names-dialog" id="user-names${i}"></span>
       </div>
-
-
         <div class="table-con"> 
           <div class="info-table">
             <table class="dialog-table">
-                <tr>
-                  <th>Category</th>
-                  <td>${tasks[i].category}</td>
-                </tr>
+                  <tr>
+                    <th>Category</th>
+                    <td class="font-variant">${tasks[i].category}</td>
+                  </tr>
 
-                <tr>
-                  <th>Status</th>
-                  <td>${tasks[i].status}</td>
-                </tr>
+                  <tr>
+                    <th>Status</th>
+                    <td>${tasks[i].status}</td>
+                  </tr>
 
-                <tr></tr>
-                  <th>Details</th>
-                  <td>${tasks[i].description}</td>
-                </tr>
-            </table>
+                  <tr></tr>
+                    <th class="display-block">Details</th>
+                    <td>${tasks[i].description}</td>
+                  </tr>
+              </table>
             
-        </div>
-
+          </div>
     <div class="date-con">${tasks[i].date}</div>
     
     <div class="dialog-btn">
@@ -91,14 +87,17 @@ function closeBox() {
 
 function pushToBoard(i) {
   tasks[i].status = "todo";
+  if (tasks[i].status = "todo") {
+     setTimeout(function () {
+      closeBox();
+     }, 2000);
+  }
   setArray("tasks", tasks);
-  renderBacklogTasks();
-  addToBoard();
+  // renderBacklogTasks();
+  addToBoard(i);
 
 }
 
 function setArray(key, array) {
   backend.setItem(key, JSON.stringify(array));
 }
-
-
