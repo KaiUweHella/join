@@ -27,7 +27,6 @@ body {
 }
 
 .links-con {
-    /* display: flex; */
     font-size: 20px;
     padding-top: 120px;
     list-style: none;
@@ -99,7 +98,7 @@ body {
     }
 
     .logo-img {
-        width: 100px;
+        width: 100px !important;
     }
 
     .menu-navbar {

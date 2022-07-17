@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- fav-icon -->
+    <link rel="icon" type="image/x-icon" href="../img/favicon.ico">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
+    <!-- JavaScript source -->
+    <script src="./js/mini_backend.js"></script>
+    <script src="./js/main.js"></script>
+
+    <!-- CSS links -->
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/help.css">
+    <!-- Material Design links -->
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+
+    <title>Join</title>
+
+</head>
+
+<body onload="init()">
+    <!-- include main -->
+    <div w3-include-html="./html_templates/menu.html"></div>
+
+    <div class="help-main">
+
+        <div class="headline-help">
+            <h1>Help</h1>
+
+            <h5 class="headline">Learning Management System Project</h5>
+        </div>
+
+        <!-- <ul class="toggles">
+            <li>
+                <a class="testt" id="0" onclick="toggleText(0)" href="#">1 Wie erstellt man ein Task?</a>
+                <div class="question" id="hi">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas cum
+                    deleniti error vel perspiciatis magnam atque aliquam quis, delectus repudiandae reiciendis omnis
+                    incidunt praesentium voluptatibus, inventore quidem enim blanditiis deserunt?</div>
+            </li>
+            <li>
+                <a class="testt" id="1" onclick="toggleText(this)" href="#">2 Was wird in Backlog gemacht?</a>
+                <div class="question" id="hi">Lorem ipsum dolor sit amet consectetur adipisicing elit</div>
+            </li>
+            <li>
+                <a class="testt" onclick="toggleText(this)" href="#">3 Priorität von Task?</a>
+                <div class="question" id="hi">Lorem ipsum dolor sit amet consectetur adipisicing elit</div>
+            </li>
+            <li>
+                <a class="testt" onclick="toggleText(this)" href="#">4 Board Tasks verschieben</a>
+                <div class="question" id="hi">Lorem ipsum dolor sit amet consectetur adipisicing elit</div>
+            </li>
+            <li>
+                <a class="testt" onclick="toggleText(this)" href="#"></a>
+                <div class="question" id="hi">Lorem ipsum dolor sit amet consectetur adipisicing elit</div>
+            </li>
+            <li>
+                <a class="testt" onclick="test(5)" href="#"></a>
+            </li>
+            <li>
+                <a class="testt" onclick="test(6)" href="#"></a>
+            </li>
+        </ul>
+        <div class="content" id="content"> -->
+
+            <h3>Add Task:</h3>
+            <ul>
+                <li>In Add Task you can create your individual tasks.</li>
+                <li>All fields marked with * must be filled in.</li>
+                <li>Please fill out the following fields:
+                    <ul>
+                        <li>Title</li>
+                        <li>Date</li>
+                        <li>Category</li>
+                        <li>Urgency (High, Medium, Low)</li>
+                        <li>Description</li>
+                        <li>Assign to (choose a User)</li>
+                    </ul>
+                </li>
+            </ul>
+            <h3>Backlog:</h3>
+            <ul>
+                <li>In the backlog, you can view the created tasks.</li>
+                <li>The color marking and symbol of the tasks symbolizes the importance of the task according to the traffic light principle.</li>
+                <li>Once a task has been selected, the possibility exists:
+                    <ul>
+                        <li>Use "Add to Board" to move the task to the board</li>
+                    </ul>
+                </li>
+            </ul>
+            <h3>Board</h3>
+            <ul>
+                <li>On the board you have the possibility to sort all your created tasks.</li>
+                <li>The individual small boards are available to them for this purpose.</li>
+                <li>Tasks can be moved between the boards via "drag and drop".</li>
+                <li>As in the backlog, the color coding shows the importance of the task according to the traffic light principle.</li>
+            </ul>
+            <!-- <h2>Weitere Hilfe</h2>
+            <ul>
+                <li>Weitere Hilfe erhalten Sie über die im Impressum hinterlegten Kontaktdaten</li>
+                <li>Wir stehen Ihnen zur Seite !</li>
+            </ul> -->
+
+        </div>
+    </div>
+
+    </div>
+
+    <!-- <script>
+        function toggleText() {
+            let test = document.getElementById('hi');
+            test.classList.toggle("mystyle");
+
+        }
+    </script> -->
+
+</body>
+
+</html>

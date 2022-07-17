@@ -90,7 +90,7 @@ function pushToBoard(i) {
   if (tasks[i].status = "todo") {
      setTimeout(function () {
       closeBox();
-     }, 2000);
+     }, 1000);
   }
   setArray("tasks", tasks);
   // renderBacklogTasks();
